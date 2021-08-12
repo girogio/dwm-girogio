@@ -95,6 +95,7 @@ struct Client {
     int basew, baseh, incw, inch, maxw, maxh, minw, minh;
     int bw, oldbw;
     unsigned int tags;
+	unsigned int switchtotag;
     int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, CenterThisWindow;
     Client *next;
     Client *snext;
@@ -144,6 +145,7 @@ typedef struct {
     const char *instance;
     const char *title;
     unsigned int tags;
+    unsigned int switchtotag;
     int isfloating;
     int CenterThisWindow;
     int monitor;
@@ -353,6 +355,11 @@ applyrules(Client *c)
             for (m = mons; m && m->num != r->monitor; m = m->next);
             if (m)
                 c->mon = m;
+            if (r->switchtotag) {
+				Arg a = { .ui = r->tags };
+				c->switchtotag = selmon->tagset[selmon->seltags];
+				view(&a);
+			}
         }
     }
     if (ch.res_class)
@@ -1991,6 +1998,10 @@ unmanage(Client *c, int destroyed)
     focus(NULL);
     updateclientlist();
     arrange(m);
+    if (c->switchtotag) {
+		Arg a = { .ui = c->switchtotag };
+		view(&a);
+	}
 }
 
 void
