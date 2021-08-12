@@ -36,6 +36,7 @@ static const Rule rules[] = {
 	{ "Code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
     { "Chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
     { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	   -1 },
+    { "Lutris"          ,NULL,       NULL,    1 << 3,         0,             1,     	     0,	    	   -1 },
     { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	   -1 },
 
 
@@ -67,7 +68,7 @@ static const Layout layouts[] = {
 
 //Terminal commands 
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-h" , "30" , NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenshot[] = {"screenshot", NULL};
 static const char *pavu[] = {"pavucontrol", NULL };
