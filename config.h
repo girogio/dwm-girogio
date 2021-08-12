@@ -1,5 +1,4 @@
 #include <X11/XF86keysym.h>
-#include "tatami.c"
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -34,8 +33,10 @@ static const Rule rules[] = {
 
     /* class      	     instance    title    tags mask  switchtotag    isfloating   CenterThisWindow      monitor */
 	{ "st",              NULL,       NULL,    1 << 0,         1,             0,     	     1,	    	   -1 },
-	{ "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	   -1 },
-	{ "chromium",        NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
+	{ "code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
+    { "chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
+    { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	   -1 },
+    { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	   -1 },
 
 
 };
@@ -51,7 +52,6 @@ static const Layout layouts[] = {
     { "T",      tile },    /* first entry is default */
     { "F",      NULL },    /* no layout function means floating behavior */
     { "M",      monocle },
-    { "|+|",    tatami },
 };
 
 /* key definitions */
@@ -120,8 +120,6 @@ ResourcePref resources[] = {
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    
-    { MODKEY,                       XK_y,      setlayout,      {.v = &layouts[3]} },
     //Rofi App Launch
     { MODKEY,                       XK_space,      spawn,          {.v = dmenucmd } },
     //Terminal Launch
