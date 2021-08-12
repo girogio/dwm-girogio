@@ -1,6 +1,8 @@
 ./vscode
 LICENSE
 README
+dwm
+dwm.o
 config.def.h
 config.hef.
 
