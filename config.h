@@ -35,7 +35,7 @@ static const Rule rules[] = {
     /* class      	     instance    title    tags mask  switchtotag    isfloating   CenterThisWindow?     monitor */
 	{ "st",              NULL,       NULL,    1,         1,             0,     	     1,	    	           -1 },
 	{ "discord",         NULL,       NULL,    0,         1,             0,     	     1,	    	           -1 },
-	{ "firefox",         NULL,       NULL,    1 << 1,    1,             0,     	     0,	    	           -1 },
+	{ "chromium",         NULL,       NULL,    1 << 1,    1,             0,     	     0,	    	           -1 },
 
 
 };
