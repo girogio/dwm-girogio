@@ -20,6 +20,7 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#be3ede";
 static char selbgcolor[]            = "#5E45A5";
+static char barheight[3]             = "";
 static char *colors[][3] = {
     /*               fg           bg           border   */
     [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -68,7 +69,7 @@ static const Layout layouts[] = {
 
 //Terminal commands 
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-h" , "30" , NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-h" ,barheight , NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenshot[] = {"screenshot", NULL};
 static const char *pavu[] = {"pavucontrol", NULL };
