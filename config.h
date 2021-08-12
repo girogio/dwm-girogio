@@ -33,8 +33,8 @@ static const Rule rules[] = {
 
     /* class      	     instance    title    tags mask  switchtotag    isfloating   CenterThisWindow      monitor */
 	{ "st",              NULL,       NULL,    1 << 0,         1,             0,     	     1,	    	   -1 },
-	{ "code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
-    { "chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
+	{ "Code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
+    { "Chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
     { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	   -1 },
     { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	   -1 },
 
