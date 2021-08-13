@@ -12,7 +12,7 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "Cascadia Code:size=15" };
+static char *fonts[]          = { "CaskaydiaCove Nerd Font:size=15" };
 static char dmenufont[]       = "Cascadia Code:size=15";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#1E1E3F";
@@ -28,7 +28,7 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5" };
+static const char *tags[] = { "", "", "爵", "", "ﭮ" };
 
 static const Rule rules[] = {
 
@@ -68,8 +68,9 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 //Terminal commands 
+static char highpriority[] = "chromium,discord,nvim,code";
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-h" ,barheight , NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-h" ,barheight, "-hp", highpriority,  NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenshot[] = {"screenshot", NULL};
 static const char *pavu[] = {"pavucontrol", NULL };
