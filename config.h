@@ -12,8 +12,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "CaskaydiaCove Nerd Font:size=15" };
-static char dmenufont[]       = "Cascadia Code:size=15";
+static char *fonts[]          = { "CaskaydiaCove Nerd Font:size=12" };
+static char dmenufont[]       = "Cascadia Code:size=12";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#1E1E3F";
 static char normfgcolor[]           = "#bbbbbb";
@@ -36,6 +36,7 @@ static const Rule rules[] = {
 	{ "st",              NULL,       NULL,    1 << 0,         1,             0,     	     1,	    	   -1 },
 	{ "Code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
     { "Chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
+    { "Brave-browser",   NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
     { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	   -1 },
     { "Lutris"          ,NULL,       NULL,    1 << 3,         0,             1,     	     0,	    	   -1 },
     { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	   -1 },
@@ -68,7 +69,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 //Terminal commands 
-static char highpriority[] = "chromium,discord,nvim,code";
+static char highpriority[] = "chromium,brave,discord,nvim,code";
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-h" ,barheight, "-hp", highpriority,  NULL };
 static const char *termcmd[]  = { "st", NULL };
@@ -77,11 +78,11 @@ static const char *pavu[] = {"pavucontrol", NULL };
 static const char *firefox[] = {"firefox", NULL };
 
 //Media keys
-static const char *inc_vol[]			= { "volume", "-i", NULL };
-static const char *dec_vol[]			= { "volume", "-d", NULL };
-static const char *mute_vol[]			= { "volume", "-m", NULL };
-/* static const char *inc_brightness[]		= { "brightness",   "-i", NULL }; */
-/* static const char *dec_brightness[]		= { "brightness",   "-d", NULL }; */
+static const char *inc_vol[] = {"set_vol",  "-i",  "5", NULL}; 
+static const char *dec_vol[] = {"set_vol",  "-d", "5", NULL}; 
+static const char *mute_vol[] = {"mute_vol", NULL}; 
+ static const char *inc_brightness[]		= { "brightness",   "-i", "10", NULL }; 
+ static const char *dec_brightness[]		= { "brightness",   "-d", "10", NULL }; 
 static const char *print_screen_sel[]   = { "print_screen", "-s", NULL };
 
 //menu commands
@@ -211,8 +212,8 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioMute,           spawn,  {.v = mute_vol } },
     { 0,                            XF86XK_AudioLowerVolume,    spawn,  {.v = dec_vol } },
     { 0,                            XF86XK_AudioRaiseVolume,    spawn,  {.v = inc_vol } },
-	/* { 0,                         XF86XK_MonBrightnessDown,   spawn,  {.v = dec_brightness } }, */	
-    /* { 0,                         XF86XK_MonBrightnessUp,     spawn,  {.v = inc_brightness } }, */
+	{ 0,                         XF86XK_MonBrightnessDown,   spawn,  {.v = dec_brightness } }, 
+    { 0,                         XF86XK_MonBrightnessUp,     spawn,  {.v = inc_brightness } }, 
 	{ 0,                            XK_Print,                   spawn,  {.v = print_screen_sel } },
 
 };
