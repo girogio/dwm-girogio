@@ -39,7 +39,7 @@ static const Rule rules[] = {
     { "Brave-browser",   NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	        -1 },
     { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	        -1 },
     { "Lutris"          ,NULL,       NULL,    1 << 3,         0,             1,     	     0,	    	        -1 },
-    { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	        -1 },
+    { "discord",         NULL,       NULL,    1 << 4,         0,             0,     	     1,	    	        -1 },
 
 
 };
