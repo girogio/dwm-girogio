@@ -196,10 +196,10 @@ static Key keys[] = {
 
 	/* Menu Bindings */
     { MODKEY|ShiftMask,             XK_p,                       spawn,  {.v = pass_menu} },
-	{ MODKEY|ShiftMask,             XK_u,                       spawn,  {.v = umount_menu} },
+	/* { MODKEY|ShiftMask,             XK_u,                       spawn,  {.v = umount_menu} }, */
 	{ MODKEY|ShiftMask,             XK_m,                       spawn,  {.v = mount_menu} },
 	{ MODKEY,                       XK_x,                       spawn,  {.v = power_menu} },
-    { MODKEY,                       XK_u,                       spawn,  {.v = unicode_menu} },
+    /* { MODKEY,                       XK_u,                       spawn,  {.v = unicode_menu} }, */
     { MODKEY,                       XK_d,                       spawn,  {.v = words_menu} },
    
 	/* mpc Bindings */
