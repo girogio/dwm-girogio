@@ -18,7 +18,7 @@ static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#1E1E3F";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#be3ede";
+static char selbordercolor[]        = "#A599E9";
 static char selbgcolor[]            = "#5E45A5";
 static char barheight[3]             = "";
 static char *colors[][3] = {
@@ -32,14 +32,14 @@ static const char *tags[] = { "", "", "爵", "", "ﭮ" };
 
 static const Rule rules[] = {
 
-    /* class      	     instance    title    tags mask  switchtotag    isfloating   CenterThisWindow      monitor */
-	{ "st",              NULL,       NULL,    1 << 0,         1,             0,     	     1,	    	   -1 },
-	{ "Code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	   -1 },
-    { "Chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
-    { "Brave-browser",   NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	   -1 },
-    { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	   -1 },
-    { "Lutris"          ,NULL,       NULL,    1 << 3,         0,             1,     	     0,	    	   -1 },
-    { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	   -1 },
+    /* class      	 instance    title    tags mask       switchtotag    isfloating      CenterThisWindow   monitor */
+    { "st",              NULL,       NULL,    1 << 0,         1,             0,     	     1,	    	        -1 },
+    { "Code",            NULL,       NULL,    1 << 1,         1,             0,     	     0,	    	        -1 },
+    { "Chromium",        NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	        -1 },
+    { "Brave-browser",   NULL,       NULL,    1 << 2,         1,             0,     	     0,	    	        -1 },
+    { "rocketleague.exe",NULL,       NULL,    1 << 3,         1,             0,     	     0,	    	        -1 },
+    { "Lutris"          ,NULL,       NULL,    1 << 3,         0,             1,     	     0,	    	        -1 },
+    { "discord",         NULL,       NULL,    1 << 4,         1,             0,     	     1,	    	        -1 },
 
 
 };
