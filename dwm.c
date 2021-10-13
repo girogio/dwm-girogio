@@ -874,12 +874,16 @@ void drawbar(Monitor *m)
             drw_text(drw, x, 0, w, bh, (lrpad - 3) / 2, upad, tags[i], urg & 1 << i);
             break;
         case 3: //good
-            drw_text(drw, x, 0, w, bh, (lrpad - 6) / 2, upad, tags[i], urg & 1 << i);
+            drw_text(drw, x, 0, w, bh, (lrpad - 7) / 2, upad, tags[i], urg & 1 << i);
             break;
         case 4: //good
-            drw_text(drw, x, 0, w, bh, (lrpad - 3) / 2, upad, tags[i], urg & 1 << i);
+            drw_text(drw, x, 0, w, bh, (lrpad - 6) / 2, upad, tags[i], urg & 1 << i);
+            break;
+       case 5: //good
+            drw_text(drw, x, 0, w, bh, (lrpad - 4) / 2, upad, tags[i], urg & 1 << i);
             break;
         }
+       
         if (occ & 1 << i)
             drw_rect(drw, x + boxw, 0, w - (2 * boxw + 1), boxw,
                      m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
